@@ -13,18 +13,36 @@
 
     <script type="text/babel">
        class Test extends React.Component {
+         constructor(props){
+           super(props);
+           this.state = {
+             number: 26
+            }
+          }
+
          render() {
            return (
              <div>
                <h5>Test Test</h5>
+               <h4>Name: {this.props.name}</h4>
+               <h4>Gender: {this.props.gender}</h4>
+               <h4>My Age: {this.state.number}</h4>
              </div>
            );
          }
        }
+
+       const brian = {
+        name: 'Brian',
+        gender: 'Male',
+     }
  
        ReactDOM.render(
-         <Test />, document.getElementById('dis')
+         <Test
+          name={brian.name}
+          gender={brian.gender}/>,document.getElementById('dis')
        );
+
     </script>
   </body>
 </html>
