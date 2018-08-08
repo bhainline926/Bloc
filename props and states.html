@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React app</title>
+  </head>
+  <body>
+
+    <div id="dis"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <script type="text/babel">
+       class Test extends React.Component {
+         constructor(props){
+           super(props);
+           this.state = {
+             number: 26
+            }
+          }
+
+         render() {
+           return (
+             <div>
+               <h5>Test Test</h5>
+               <h4>Name: {this.props.name}</h4>
+               <h4>Gender: {this.props.gender}</h4>
+               <h4>My Age: {this.state.number}</h4>
+             </div>
+           );
+         }
+       }
+
+       const brian = {
+        name: 'Brian',
+        gender: 'Male',
+     }
+ 
+       ReactDOM.render(
+         <Test
+          name={brian.name}
+          gender={brian.gender}/>,document.getElementById('dis')
+       );
+
+    </script>
+  </body>
+</html>
